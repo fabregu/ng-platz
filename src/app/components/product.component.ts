@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { Product } from "../product.model";
 
 @Component({
@@ -7,11 +7,20 @@ import { Product } from "../product.model";
 })
 
 export class ProductComponent {
-    product: Product = {
-          id: '1',
-          image: 'assets/image/foto.jpg',
-          title: 'Foto 1',
-          price: 14.00,
-          description: 'XD'
-    }    
+
+    @Input() product!: Product;
+    @Output() productClicked: EventEmitter<number>= new EventEmitter();
+    
+    // product: Product = {
+    //       id: '1',
+    //       image: 'assets/images/bata-mujer.jpg',
+    //       title: 'Bata Mujer',
+    //       price: 14.00,
+    //       description: 'Bata rosada de ducha para mujer'
+    // }    
+
+    addCart() {
+        console.log("Añadir al carrito");
+        this.productClicked.emit(this.product.id);
+    }
 }

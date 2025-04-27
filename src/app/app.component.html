@@ -342,7 +342,7 @@
   </div>
 
   <!-- Resources -->
-  <app-product></app-product>
+  <!-- <app-product></app-product> -->
 
   <div class="card-container">
         
@@ -370,10 +370,11 @@
   </div>
 
   <div *ngFor="let product of products">
-    {{ product.id }}
+    <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
+    <!-- {{ product.id }}
     {{ product.title }}
     <img [src]="product.image" alt="">
-    {{ product.price }}
+    {{ product.price }} -->
 
   </div>
 

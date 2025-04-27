@@ -13,25 +13,25 @@ export class AppComponent {
 
   products: Product[] = [
     {
-      id: '1',
-      image: 'assets/image/foto.jpg',
-      title: 'Foto 1',
+      id: 1,
+      image: 'assets/images/bata-mujer.jpg',
+      title: 'Toalla de ducha para Dama',
       price: 14.00,
       description: 'XD'
     },
     {
-      id: '2',
-      image: 'assets/image/foto2.jpg',
-      title: 'Foto 2',
+      id: 2,
+      image: 'assets/images/camisa.jpg',
+      title: 'Camisa',
       price: 15.00,
-      description: 'XD'
+      description: 'Camisa manga larga para varon'
     },
     {
-      id: '3',
-      image: 'assets/image/foto3.jpg',
-      title: 'Foto 3',
+      id: 3,
+      image: 'assets/images/polo.png',
+      title: 'Polo Basic',
       price: 29.00,
-      description: 'XD'
+      description: 'Polo cuello redondo color rojo'
     }
   ];
 
@@ -41,5 +41,10 @@ export class AppComponent {
 
   deleteItem(index: number) {
     this.items.splice(index, 1);
+  }
+
+  clickProduct(id: number){
+    console.log('product');
+    console.log(id);
   }
 }
